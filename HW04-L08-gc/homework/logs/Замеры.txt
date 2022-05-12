@@ -1,0 +1,13 @@
+		|	Before										|	After
+256m	|	java.lang.OutOfMemoryError: Java heap space	|	spend msec:6453, sec:6
+512m	|	spend msec:25262, sec:25					|	spend msec:4978, sec:4
+1g		|	spend msec:22054, sec:22					|	spend msec:4634, sec:4
+1500m	|	spend msec:20804, sec:20					|	spend msec:4812, sec:4
+1600m	|	spend msec:20810, sec:20					|	
+1700m	|	spend msec:20542, sec:20					|	
+1750m	|	spend msec:19402, sec:19					|	spend msec:4873, sec:4
+1800m	|	spend msec:20669, sec:20					|	
+1900m	|	spend msec:20038, sec:20					|	
+2g		|	spend msec:20130, sec:20					|	spend msec:4909, sec:4
+2500	|	spend msec:21103, sec:21					|	
+3g		|	spend msec:23757, sec:23					|	
