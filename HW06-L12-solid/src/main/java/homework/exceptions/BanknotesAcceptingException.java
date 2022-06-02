@@ -2,15 +2,15 @@ package homework.exceptions;
 
 import homework.services.MessageService;
 
-public class BanknotesAcceptingError extends Exception {
+public class BanknotesAcceptingException extends Exception {
     String message;
     Throwable cause;
 
-    public BanknotesAcceptingError() {
+    public BanknotesAcceptingException() {
         this.message = MessageService.ACCEPT_BANKNOTES_ERROR;
     }
 
-    public BanknotesAcceptingError(Throwable cause) {
+    public BanknotesAcceptingException(Throwable cause) {
         this.message = MessageService.ACCEPT_BANKNOTES_ERROR;
         this.cause = cause;
     }

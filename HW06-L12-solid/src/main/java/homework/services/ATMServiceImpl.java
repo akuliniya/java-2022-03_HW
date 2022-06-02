@@ -4,7 +4,7 @@ import homework.api.services.ATMService;
 import homework.domain.ATM;
 import homework.domain.Banknote;
 import homework.domain.Section;
-import homework.exceptions.BanknotesAcceptingError;
+import homework.exceptions.BanknotesAcceptingException;
 import homework.exceptions.NoSuchSumException;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class ATMServiceImpl implements ATMService {
     }
 
     @Override
-    public String acceptMoney(List<Banknote> banknotes) throws BanknotesAcceptingError {
+    public String acceptMoney(List<Banknote> banknotes) throws BanknotesAcceptingException {
         List<Section> sections = List.copyOf(atm.getSections());
         for (Section atmSection : sections) {
             for (Banknote banknote : banknotes) {
@@ -28,7 +28,7 @@ public class ATMServiceImpl implements ATMService {
                 }
             }
         }
-        return Optional.of(MessageService.BANKNOTES_ACCEPTED).orElseThrow(BanknotesAcceptingError::new);
+        return Optional.of(MessageService.BANKNOTES_ACCEPTED).orElseThrow(BanknotesAcceptingException::new);
     }
 
     @Override

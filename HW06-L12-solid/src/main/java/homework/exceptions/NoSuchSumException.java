@@ -6,6 +6,10 @@ public class NoSuchSumException extends Exception {
     String message;
     Throwable cause;
 
+    public NoSuchSumException() {
+        this.message = MessageService.NO_SUCH_SUM_MESSAGE;
+    }
+
     public NoSuchSumException(int sum) {
         this.message = MessageService.NO_SUCH_SUM_MESSAGE + sum;
     }
