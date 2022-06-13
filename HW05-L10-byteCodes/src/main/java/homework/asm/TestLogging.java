@@ -1,4 +1,4 @@
-package homework.proxy.framework;
+package homework.asm;
 
 public interface TestLogging {
 

@@ -1,8 +1,8 @@
-package homework.proxy.simple;
+package homework.simple;
 
-import homework.proxy.framework.Log;
-import homework.proxy.framework.TestLogging;
-import homework.proxy.framework.TestLoggingImpl;
+import homework.asm.Log;
+import homework.asm.TestLogging;
+import homework.asm.TestLoggingImpl;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
@@ -14,14 +14,14 @@ public class Ioc {
     private Ioc() {
     }
 
-    static homework.proxy.framework.TestLogging createTestLogging() {
+    static TestLogging createTestLogging() {
         InvocationHandler handler = new DemoInvocationHandler(new TestLoggingImpl());
-        return (homework.proxy.framework.TestLogging) Proxy.newProxyInstance(Ioc.class.getClassLoader(),
-                new Class<?>[]{homework.proxy.framework.TestLogging.class}, handler);
+        return (TestLogging) Proxy.newProxyInstance(Ioc.class.getClassLoader(),
+                new Class<?>[]{TestLogging.class}, handler);
     }
 
     static class DemoInvocationHandler implements InvocationHandler {
-        private final homework.proxy.framework.TestLogging testLogging;
+        private final TestLogging testLogging;
 
         DemoInvocationHandler(TestLogging testLogging) {
             this.testLogging = testLogging;

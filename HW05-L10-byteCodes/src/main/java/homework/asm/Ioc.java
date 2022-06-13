@@ -1,4 +1,4 @@
-package homework.proxy.framework;
+package homework.asm;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;

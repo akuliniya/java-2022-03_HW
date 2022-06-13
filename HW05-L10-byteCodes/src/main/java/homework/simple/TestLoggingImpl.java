@@ -1,7 +1,7 @@
-package homework.proxy.simple;
+package homework.simple;
 
-import homework.proxy.framework.Log;
-import homework.proxy.framework.TestLogging;
+import homework.asm.Log;
+import homework.asm.TestLogging;
 
 public class TestLoggingImpl implements TestLogging {
     public void calculation() {
@@ -9,7 +9,7 @@ public class TestLoggingImpl implements TestLogging {
     }
 
     @Override
-    @homework.proxy.framework.Log
+    @homework.asm.Log
     public void calculation(int param) {
         System.out.println("calculation is running with param: " + param);
     }

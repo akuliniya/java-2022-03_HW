@@ -1,6 +1,6 @@
-package homework.proxy.simple;
+package homework.simple;
 
-import homework.proxy.framework.TestLogging;
+import homework.asm.TestLogging;
 
 public class Demo {
 

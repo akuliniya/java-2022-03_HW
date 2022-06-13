@@ -1,4 +1,4 @@
-package homework.proxy.framework;
+package homework.asm;
 
 import org.objectweb.asm.*;
 import org.objectweb.asm.commons.AdviceAdapter;
@@ -8,9 +8,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.Instrumentation;
-import java.lang.reflect.MalformedParameterizedTypeException;
 import java.security.ProtectionDomain;
-import java.util.Map;
 import java.util.Set;
 
 public class Agent {

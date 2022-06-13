@@ -1,4 +1,4 @@
-package homework.proxy.simple;
+package homework.asm;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
