@@ -11,6 +11,7 @@ dependencies {
     implementation 'javax.json:javax.json-api'
     implementation 'org.glassfish:jakarta.json'
     implementation 'com.google.protobuf:protobuf-java-util'
+    implementation 'org.ow2.asm:asm-commons'
 
     testImplementation ('org.junit.jupiter:junit-jupiter-api')
     testImplementation 'org.junit.jupiter:junit-jupiter-engine'
@@ -19,6 +20,15 @@ dependencies {
     testImplementation 'org.mockito:mockito-core'
     testImplementation 'org.mockito:mockito-junit-jupiter'
 }
+
+//task shadowMeasurmentAgent(type: Jar, dependsOn: shadowJar) {
+//    archiveBaseName.set('measurmentAgent')
+//    manifest {
+//        attributes 'Main-Class': 'ru.otus.Main'
+//        attributes 'Premain-Class': 'ru.otus.agent.Agent'
+//    }
+//    from zipTree(shadowJar.archiveFile)
+//}
 
 test {
     useJUnitPlatform()
@@ -32,3 +42,6 @@ tasks.withType(JavaCompile) {
         encoding = 'UTF-8'
     }
 }
+
+//tasks.build.dependsOn tasks.shadowMeasurmentAgent
+//tasks.test.dependsOn tasks.shadowMeasurmentAgent
