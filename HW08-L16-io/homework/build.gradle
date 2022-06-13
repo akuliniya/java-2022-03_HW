@@ -21,15 +21,6 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter'
 }
 
-//task shadowMeasurmentAgent(type: Jar, dependsOn: shadowJar) {
-//    archiveBaseName.set('measurmentAgent')
-//    manifest {
-//        attributes 'Main-Class': 'ru.otus.Main'
-//        attributes 'Premain-Class': 'ru.otus.agent.Agent'
-//    }
-//    from zipTree(shadowJar.archiveFile)
-//}
-
 test {
     useJUnitPlatform()
     testLogging {
@@ -42,6 +33,3 @@ tasks.withType(JavaCompile) {
         encoding = 'UTF-8'
     }
 }
-
-//tasks.build.dependsOn tasks.shadowMeasurmentAgent
-//tasks.test.dependsOn tasks.shadowMeasurmentAgent

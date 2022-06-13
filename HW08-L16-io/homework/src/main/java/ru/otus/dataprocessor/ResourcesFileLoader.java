@@ -15,23 +15,27 @@ public class ResourcesFileLoader implements Loader {
 
     public ResourcesFileLoader(String fileName) {
         this.mapper = new ObjectMapper();
+        mapper.addMixInAnnotations(Measurement.class, MeasurementMixin.class);
         this.fileName = fileName;
     }
 
     @Override
     //читает файл, парсит и возвращает результат
-    public List<Measurement> load() throws IOException {
+    public List<Measurement> load() {
 //        System.out.println("current dir: " + System.getProperty("user.dir"));
+        try {
+            var file = new File(fileName);
+            System.out.println("json will will be loaded from the file:" + file.getAbsolutePath());
 
-        var file = new File(fileName);
-        System.out.println("json will will be loaded from the file:" + file.getAbsolutePath());
+            JavaType type = mapper.getTypeFactory().constructParametricType(List.class, Measurement.class);
+            List<Measurement> measurements = mapper.readValue(file, type);
 
-        JavaType type = mapper.getTypeFactory().constructParametricType(List.class, Measurement.class);
-        List<Measurement> measurements = mapper.readValue(file, type);
-
-        for (Measurement measurement : measurements) {
-            System.out.println(measurement.toString());
+            for (Measurement measurement : measurements) {
+                System.out.println(measurement.toString());
+            }
+            return measurements;
+        }catch (IOException e) {
+            throw new FileProcessException(e);
         }
-        return measurements;
     }
 }

@@ -17,9 +17,14 @@ public class FileSerializer implements Serializer {
 
     @Override
     //формирует результирующий json и сохраняет его в файл
-    public void serialize(Map<String, Double> data) throws IOException {
-        mapper.writeValue(file, data);
-        System.out.println("user saved to the file:" + file.getAbsolutePath());
+    public void serialize(Map<String, Double> data) {
+        try {
+            mapper.writeValue(file, data);
+            System.out.println("user saved to the file:" + file.getAbsolutePath());
+        }catch(IOException e) {
+            throw new FileProcessException(e);
+        }
+
 
     }
 }

@@ -1,28 +1,17 @@
 package ru.otus.model;
 
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
 //Допустим, этот класс библиотечный, его нельзя менять
 public final class Measurement {
-    @JsonProperty("name")
     private final String name;
 
-    @JsonProperty("value")
     private final double value;
 
-//    public Measurement(String name, double value) {
-//        this.name = name;
-//        this.value = value;
-//    }
-
-    @JsonCreator
-    public Measurement(@JsonProperty("name") String name, @JsonProperty("value") double value) {
+    public Measurement(String name, double value) {
         this.name = name;
         this.value = value;
     }
