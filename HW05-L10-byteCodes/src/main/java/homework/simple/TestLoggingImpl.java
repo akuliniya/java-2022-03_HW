@@ -1,22 +1,26 @@
 package homework.simple;
 
-import homework.asm.Log;
-import homework.asm.TestLogging;
-
 public class TestLoggingImpl implements TestLogging {
     public void calculation() {
         System.out.println("calculation without params");
     }
 
     @Override
-    @homework.asm.Log
     public void calculation(int param) {
-        System.out.println("calculation is running with param: " + param);
+        System.out.println("method 'calculation' is running with param: " + param);
+        System.out.println("---------------------");
     }
 
     @Override
-    @Log
-    public void calculation(int param, String sParam) {
-        System.out.printf("calculation is running with params: %d, %s %n", param, sParam);
+    public void calculation(int param, String param2) {
+        System.out.printf("method 'calculation' is running with params: %d, %s %n", param, param2);
+        System.out.println("---------------------");
+    }
+
+    @Override
+    public void calculation(int param1, String param2, int param3) {
+        System.out.printf("method 'calculation' is running with params: %d, %s, %d %n", param1, param2, param3);
+        System.out.println("---------------------");
+
     }
 }

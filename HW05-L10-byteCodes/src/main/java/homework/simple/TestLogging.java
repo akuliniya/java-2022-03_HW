@@ -1,14 +1,12 @@
 package homework.simple;
 
-public class TestLogging {
+public interface TestLogging {
 
     @Log
-    public void calculation(int param) {
-        System.out.println("calculation is running with param: " + param);
-    }
+    void calculation(int param);
 
     @Log
-    public void calculation(int param, String sParam) {
-        System.out.printf("calculation is running with params: %d, %s %n", param, sParam);
-    }
+    void calculation(int param1, String param2);
+
+    void calculation(int param1, String param2, int param3);
 }

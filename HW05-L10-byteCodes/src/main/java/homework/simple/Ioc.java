@@ -1,9 +1,5 @@
 package homework.simple;
 
-import homework.asm.Log;
-import homework.asm.TestLogging;
-import homework.asm.TestLoggingImpl;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -29,7 +25,9 @@ public class Ioc {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("executed method: " + method.getName() + ", param: " + Arrays.toString(args));
+            if (isMethodNeedsLogging(method)){
+                System.out.println("executed method: " + method.getName() + ", param: " + Arrays.toString(args));
+            }
             return method.invoke(testLogging, args);
         }
 
