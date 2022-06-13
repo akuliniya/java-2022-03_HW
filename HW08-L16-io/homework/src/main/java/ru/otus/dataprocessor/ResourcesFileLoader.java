@@ -15,7 +15,7 @@ public class ResourcesFileLoader implements Loader {
 
     public ResourcesFileLoader(String fileName) {
         this.mapper = new ObjectMapper();
-        mapper.addMixInAnnotations(Measurement.class, MeasurementMixin.class);
+        mapper.addMixIn(Measurement.class, MeasurementMixin.class);
         this.fileName = fileName;
     }
 
